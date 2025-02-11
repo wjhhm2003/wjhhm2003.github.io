@@ -1,0 +1,58 @@
+#aplayer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+  margin: 20px;
+  width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.7); /* 半透明背景 */
+  backdrop-filter: blur(10px); /* 毛玻璃效果 */
+  -webkit-backdrop-filter: blur(10px); /* 兼容 Safari */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* 可选：添加边框 */
+}
+/*所有页面实现毛玻璃特效*/
+
+#aside-content,
+#search-mask,
+/* 手机端 */
+#sidebar #menu-mask {
+  background: rgba(255, 255, 255, 0);
+}
+
+.search-dialog {
+  border-radius: 0px;
+}
+
+/* 浅色模式 */
+html[data-theme="light"] #aside-content>.card-widget:first-child,
+html[data-theme="light"] #aside-content .card-widget,
+html[data-theme="light"] .layout>div:first-child:not(.recent-posts),
+html[data-theme="light"] #recent-posts>.recent-post-item,
+/* 标题栏 */
+html[data-theme="light"] #page-header.nav-visible #nav,
+/* 搜索框 */
+html[data-theme="light"] .search-dialog,
+/* 移动端 */
+html[data-theme="light"] #sidebar #sidebar-menus.open {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+}
+
+/* 深色模式 */
+html[data-theme="dark"] #aside-content>.card-widget:first-child,
+html[data-theme="dark"] #aside-content .card-widget,
+html[data-theme="dark"] .layout>div:first-child:not(.recent-posts),
+html[data-theme="dark"] #recent-posts>.recent-post-item,
+/* 标题栏 */
+html[data-theme="dark"] #page-header.nav-visible #nav,
+/* 搜索框 */
+html[data-theme="dark"] .search-dialog,
+/* 移动端 */
+html[data-theme="dark"] #sidebar #sidebar-menus.open {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(20px);
+}
+
+
