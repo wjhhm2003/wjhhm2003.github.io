@@ -57,4 +57,59 @@ html[data-theme="dark"] #sidebar #sidebar-menus.open {
   -webkit-backdrop-filter: blur(20px); /* 兼容 Safari */
 }
 
+/* Hide post covers in recent post listings */
+#recent-posts .recent-post-item .post_cover {
+  display: none !important; /* Use !important to ensure override */
+}
 
+/* Adjust post info to take full width when cover is hidden */
+#recent-posts .recent-post-item > .recent-post-info {
+  width: 100% !important; /* Use !important to ensure override */
+  padding-left: 20px !important; /* Maintain some padding */
+  padding-right: 20px !important; /* Maintain some padding */
+}
+
+/* Ensure items without covers also look consistent if they didn't before */
+#recent-posts .recent-post-item > .recent-post-info.no-cover {
+  width: 100% !important;
+  padding: 30px 20px !important; /* Keep original padding for no-cover items */
+}
+
+/* Hide header image on single post pages */
+#page-header.post-bg {
+  background-image: none !important;
+  min-height: auto !important;
+  height: auto !important;
+  /* Potentially add a small padding or margin if needed after background removal */
+  padding-top: 20px !important; /* Example: ensure some space for post-info */
+  padding-bottom: 20px !important; /* Example: ensure some space for post-info */
+}
+
+/* Adjust post-info on single post pages when cover is hidden */
+/* This rule ensures that post-info (title, meta) remains clearly visible */
+/* and has a sensible background if the main page-header background is removed. */
+#page-header.post-bg #post-info {
+  position: relative !important; /* Reset absolute positioning if any */
+  bottom: auto !important; /* Reset bottom positioning */
+  color: var(--font-color) !important; /* Ensure text is visible, might need adjustment based on theme */
+  text-shadow: none !important; /* Remove text shadow if it was for dark bg */
+  padding: 20px 0 !important; /* Add some padding for spacing */
+}
+
+/* Ensure post-meta text is also legible */
+#page-header.post-bg #post-info #post-meta,
+#page-header.post-bg #post-info #post-meta a {
+  color: var(--card-meta) !important; /* Use a legible color for meta, adjust as needed */
+  text-shadow: none !important;
+}
+
+/* Ensure post title is also legible */
+#page-header.post-bg #post-info .post-title {
+    color: var(--text-highlight-color) !important; /* Use a legible color for title */
+    text-shadow: none !important;
+}
+
+/* Hide top image on pages */
+.top-img {
+  display: none !important;
+}
