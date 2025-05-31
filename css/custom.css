@@ -5,13 +5,21 @@
   /* z-index: 9999; */ /* Handled by APlayer's fixed:true mode */
   /* margin: 20px; */ /* Handled by APlayer's fixed:true mode */
   width: 300px; /* Or adjust as needed for fixed mode */
-  border-radius: 8px;
+  border-radius: 8px !important;
+  overflow: hidden !important;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   background-color: rgba(255, 255, 255, 0.7) !important; /* 半透明背景, ensure override */
   backdrop-filter: blur(20px); /* 毛玻璃效果 */
   -webkit-backdrop-filter: blur(20px); /* 兼容 Safari */
   border: 1px solid rgba(255, 255, 255, 0.2); /* 可选：添加边框 */
 }
+
+/* Ensure fixed mode also respects rounded corners and clips content */
+#aplayer.aplayer-fixed {
+  border-radius: 8px !important;
+  overflow: hidden !important;
+}
+
 /*所有页面实现毛玻璃特效*/
 
 #aside-content,
@@ -115,32 +123,43 @@ html[data-theme="dark"] #sidebar #sidebar-menus.open {
 }
 
 /* APlayer Dark Mode Frosted Glass Support */
-html[data-theme="dark"] #aplayer {
+html[data-theme="dark"] #aplayer.aplayer-fixed {
   background-color: rgba(0, 0, 0, 0.7) !important; /* Dark semi-transparent background */
-  border-color: rgba(0, 0, 0, 0.2) !important; /* Optional: darker border for dark mode */
-  /* The backdrop-filter and -webkit-backdrop-filter are already set to blur(20px) globally for #aplayer,
-     so they should not need to be repeated here unless we want a different blur for dark mode.
-     For now, we assume the existing blur(20px) is desired for both themes. */
+  border-color: rgba(50, 50, 50, 0.5) !important; /* Darker, more visible border for dark mode */
+  /* The backdrop-filter and -webkit-backdrop-filter are inherited from the base #aplayer rule. */
 }
 
-/* Ensure text color in aplayer is legible in dark mode */
+/* Ensure text color in aplayer is legible in dark mode when fixed */
 /* This might need more specific selectors depending on APlayer's internal structure */
-html[data-theme="dark"] #aplayer .aplayer-title,
-html[data-theme="dark"] #aplayer .aplayer-artist,
-html[data-theme="dark"] #aplayer .aplayer-time button,
-html[data-theme="dark"] #aplayer .aplayer-time .aplayer-ptime,
-html[data-theme="dark"] #aplayer .aplayer-time .aplayer-dtime {
+html[data-theme="dark"] #aplayer.aplayer-fixed .aplayer-title,
+html[data-theme="dark"] #aplayer.aplayer-fixed .aplayer-artist,
+html[data-theme="dark"] #aplayer.aplayer-fixed .aplayer-time button, /* Includes play/pause, loop, menu icons inside time area */
+html[data-theme="dark"] #aplayer.aplayer-fixed .aplayer-time .aplayer-ptime,
+html[data-theme="dark"] #aplayer.aplayer-fixed .aplayer-time .aplayer-dtime {
   color: #e0e0e0 !important; /* Light text color for dark mode */
 }
-html[data-theme="dark"] #aplayer .aplayer-list ol li:hover {
+
+/* Ensure general icons are also styled for dark mode */
+html[data-theme="dark"] #aplayer.aplayer-fixed .aplayer-icon {
+  color: #e0e0e0 !important; /* Default color for icons */
+  fill: #e0e0e0 !important; /* For SVG icons */
+}
+
+html[data-theme="dark"] #aplayer.aplayer-fixed .aplayer-icon:hover {
+  color: #ffffff !important; /* Brighter color on hover */
+  fill: #ffffff !important; /* For SVG icons */
+}
+
+/* Playlist item styling for dark mode when fixed */
+html[data-theme="dark"] #aplayer.aplayer-fixed .aplayer-list ol li:hover {
     background: rgba(255, 255, 255, 0.1) !important;
 }
-html[data-theme="dark"] #aplayer .aplayer-list ol li.aplayer-list-light {
+html[data-theme="dark"] #aplayer.aplayer-fixed .aplayer-list ol li.aplayer-list-light {
     background: rgba(255, 255, 255, 0.2) !important;
-    color: #fff !important;
+    color: #ffffff !important; /* Ensure text on active/selected item is bright */
 }
-html[data-theme="dark"] #aplayer .aplayer-list ol li .aplayer-list-index,
-html[data-theme="dark"] #aplayer .aplayer-list ol li .aplayer-list-title,
-html[data-theme="dark"] #aplayer .aplayer-list ol li .aplayer-list-author {
-    color: #e0e0e0 !important;
+html[data-theme="dark"] #aplayer.aplayer-fixed .aplayer-list ol li .aplayer-list-index,
+html[data-theme="dark"] #aplayer.aplayer-fixed .aplayer-list ol li .aplayer-list-title,
+html[data-theme="dark"] #aplayer.aplayer-fixed .aplayer-list ol li .aplayer-list-author {
+    color: #e0e0e0 !important; /* Default text color for playlist items */
 }
