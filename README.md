@@ -1,25 +1,8 @@
 [查看中文版本 (View in Chinese)](README_zh-CN.md)
 
-# Ensoleile's Blog
+# Ensoleile's Blog ❤️
 
 This is a personal blog website. It contains blog posts on various topics, organized by date.
-
-## Project Structure
-
-- `1/`: Contains an `index.html` file, purpose unclear from structure alone.
-- `2025/`: Contains blog posts organized by year, month, and day. For example, `2025/02/11/hello-world/index.html`.
-- `archives/`: Contains archives of blog posts, likely generated.
-- `categories/`: Contains category pages for blog posts (e.g., `categories/技术/index.html`).
-- `css/`: Contains CSS files for styling the website (`custom.css`, `index.css`, `style.css`, `var.css`).
-- `dist/`: Contains minified APlayer (a music player) assets.
-- `fancybox/`: Contains assets for Fancybox, a lightbox JavaScript library.
-- `images/`: Contains images used in blog posts and site design.
-- `img/`: Contains general site images, favicons, and potentially some media files for posts.
-- `js/`: Contains JavaScript files for website functionality (`main.js`, `script.js`, etc.) and libraries (jQuery).
-- `tags/`: Contains tag pages for blog posts (e.g., `tags/文件传输/index.html`).
-- `index.html`: The main landing page of the blog.
-- `sitemap.txt`, `sitemap.xml`: Sitemaps for search engine indexing.
-- `google838506fb3e8f3cf1.html`: Google site verification file.
 
 ## How to View the Blog
 
@@ -27,8 +10,7 @@ This is a static website. To view the blog:
 
 1. Clone this repository to your local machine.
 2. Open the `index.html` file in your web browser.
-
-Alternatively, if hosted, you can access it via its URL.
+3. Visit my website wjhhm2003.github.io
 
 ## Creating New Posts
 
