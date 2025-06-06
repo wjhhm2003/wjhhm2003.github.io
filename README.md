@@ -1,6 +1,6 @@
 [查看中文版本 (View in Chinese)](README_zh-CN.md)
 
-# Personal Blog
+# Ensoleile's Blog
 
 This is a personal blog website. It contains blog posts on various topics, organized by date.
 
