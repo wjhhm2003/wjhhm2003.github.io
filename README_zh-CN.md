@@ -11,7 +11,6 @@
 - `archives/`: 包含博客文章的归档，可能是生成的。
 - `categories/`: 包含博客文章的分类页面 (例如, `categories/技术/index.html`)。
 - `css/`: 包含用于网站样式的 CSS 文件 (`custom.css`, `index.css`, `style.css`, `var.css`)。
-- `dist/`: 包含压缩后的 APlayer (一个音乐播放器) 资源。
 - `fancybox/`: 包含 Fancybox (一个灯箱效果的 JavaScript 库) 的资源。
 - `images/`: 包含博客文章和网站设计中使用的图片。
 - `img/`: 包含常规网站图片、favicon 以及可能用于文章的一些媒体文件。
@@ -49,5 +48,4 @@
 
 -   **样式:** 修改 `css/` 目录中的 CSS 文件 (例如, `custom.css`, `style.css`) 以更改博客的视觉外观。
 -   **功能:** 如果您需要更改或添加基于 JavaScript 的功能，您可以编辑 `js/` 目录中的文件。
--   **音乐播放器:** 博客使用 APlayer。音乐播放器的配置可能可以在 `dist/music.js` 文件中找到或修改，或者在 HTML/JS 中初始化 `APlayer` 的位置。
 -   **图片和媒体:** 替换或添加 `images/` 和 `img/` 目录中的图片。

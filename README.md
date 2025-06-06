@@ -11,7 +11,6 @@ This is a personal blog website. It contains blog posts on various topics, organ
 - `archives/`: Contains archives of blog posts, likely generated.
 - `categories/`: Contains category pages for blog posts (e.g., `categories/技术/index.html`).
 - `css/`: Contains CSS files for styling the website (`custom.css`, `index.css`, `style.css`, `var.css`).
-- `dist/`: Contains minified APlayer (a music player) assets.
 - `fancybox/`: Contains assets for Fancybox, a lightbox JavaScript library.
 - `images/`: Contains images used in blog posts and site design.
 - `img/`: Contains general site images, favicons, and potentially some media files for posts.
@@ -49,5 +48,4 @@ You can customize the appearance and functionality of the blog:
 
 -   **Styling:** Modify the CSS files in the `css/` directory (e.g., `custom.css`, `style.css`) to change the visual appearance of the blog.
 -   **Functionality:** If you need to change or add JavaScript-based features, you can edit the files in the `js/` directory.
--   **Music Player:** The blog uses APlayer. Configuration for the music player can likely be found or modified within the `dist/music.js` file or where `APlayer` is initialized in the HTML/JS.
 -   **Images & Media:** Replace or add images in the `images/` and `img/` directories.
