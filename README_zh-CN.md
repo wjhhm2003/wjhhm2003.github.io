@@ -1,25 +1,8 @@
 [View in English (查看英文版本)](README.md)
 
-# 个人博客
+# Ensoleile的个人博客 ❤️
 
-这是一个个人博客网站。它包含按日期组织的各种主题的博客文章。
-
-## 项目结构
-
-- `1/`: 包含一个 `index.html` 文件，仅从结构无法明确其用途。
-- `2025/`: 包含按年、月、日组织的博客文章。例如, `2025/02/11/hello-world/index.html`。
-- `archives/`: 包含博客文章的归档，可能是生成的。
-- `categories/`: 包含博客文章的分类页面 (例如, `categories/技术/index.html`)。
-- `css/`: 包含用于网站样式的 CSS 文件 (`custom.css`, `index.css`, `style.css`, `var.css`)。
-- `dist/`: 包含压缩后的 APlayer (一个音乐播放器) 资源。
-- `fancybox/`: 包含 Fancybox (一个灯箱效果的 JavaScript 库) 的资源。
-- `images/`: 包含博客文章和网站设计中使用的图片。
-- `img/`: 包含常规网站图片、favicon 以及可能用于文章的一些媒体文件。
-- `js/`: 包含网站功能的 JavaScript 文件 (`main.js`, `script.js` 等) 和库 (jQuery)。
-- `tags/`: 包含博客文章的标签页面 (例如, `tags/文件传输/index.html`)。
-- `index.html`: 博客的主登陆页面。
-- `sitemap.txt`, `sitemap.xml`: 用于搜索引擎索引的站点地图。
-- `google838506fb3e8f3cf1.html`: Google 网站验证文件。
+这是我的个人博客网站。它包含按日期组织的各种主题的博客文章。
 
 ## 如何查看博客
 
@@ -27,8 +10,7 @@
 
 1. 将此仓库克隆到您的本地计算机。
 2. 在您的网页浏览器中打开 `index.html` 文件。
-
-或者，如果已托管，您可以通过其 URL 访问。
+3. 访问 𝘄𝗷𝗵𝗵𝗺𝟮𝟬𝟬𝟯.𝗴𝗶𝘁𝗵𝘂𝗯.𝗶𝗼
 
 ## 创建新文章
 
