@@ -267,6 +267,14 @@ template {
   -ms-transform: scale(1.1);
   transform: scale(1.1);
 }
+
+#recent-posts .recent-post-item .post_cover .post-bg:hover {
+  -webkit-transform: none !important;
+  -moz-transform: none !important;
+  -o-transform: none !important;
+  -ms-transform: none !important;
+  transform: none !important;
+}
 .postImgHover:hover .cover,
 .pagination-related:hover .cover {
   opacity: 0.5;
