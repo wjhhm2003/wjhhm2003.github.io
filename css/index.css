@@ -1368,7 +1368,8 @@ body {
   position: relative;
   overflow-y: scroll;
   min-height: 100%;
-  background: var(--global-bg);
+  background: url('https://images.unsplash.com/photo-1699891730676-037bed3c1bed?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d2Vic2l0ZSUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D&fm=jpg&q=60&w=3000') no-repeat center center fixed;
+  background-size: cover;
   color: var(--font-color);
   font-size: var(--global-font-size);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Lato, Roboto, 'PingFang SC', 'Microsoft JhengHei', sans-serif;
@@ -2224,6 +2225,8 @@ figure.highlight pre .javascript .function {
   -webkit-align-items: center;
   align-items: center;
   height: 16.8em;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
 }
 @media screen and (max-width: 768px) {
   #recent-posts .recent-post-item {
@@ -2529,6 +2532,8 @@ figure.highlight pre .javascript .function {
   overflow: hidden;
   margin-bottom: 20px;
   padding: 20px 24px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
 }
 #aside-content .card-widget:last-child {
   margin-bottom: 0;
@@ -3265,10 +3270,11 @@ figure.highlight pre .javascript .function {
 }
 #footer {
   position: relative;
-  background-color: #49b1f5;
+  background-color: rgba(73, 177, 245, 0.5);
   background-attachment: scroll;
   background-position: bottom;
   background-size: cover;
+  backdrop-filter: blur(10px);
 }
 #footer-wrap {
   position: relative;
@@ -3303,6 +3309,8 @@ figure.highlight pre .javascript .function {
   -o-transition: all 0.5s;
   -ms-transition: all 0.5s;
   transition: all 0.5s;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
 }
 #page-header:not(.not-top-img):before {
   position: absolute;
@@ -3445,7 +3453,7 @@ figure.highlight pre .javascript .function {
   position: fixed;
   top: -60px;
   z-index: 91;
-  background: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.5);
   -webkit-box-shadow: 0 5px 6px -5px rgba(133,133,133,0.6);
   box-shadow: 0 5px 6px -5px rgba(133,133,133,0.6);
   -webkit-transition: -webkit-transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
@@ -3454,7 +3462,7 @@ figure.highlight pre .javascript .function {
   -ms-transition: -ms-transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
   transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
   will-change: transform;
-  backdrop-filter: blur(7px);
+  backdrop-filter: blur(10px);
 }
 #page-header.nav-fixed #nav #blog-info {
   color: var(--font-color);
