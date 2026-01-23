@@ -1059,15 +1059,17 @@ inject:
     - <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
     - |
       <script>
-        const ap = new APlayer({
-          container: document.getElementById('aplayer-fixed'),
-          fixed: true,
-          audio: [{
-            name: 'DAMIDAMI',
-            artist: 'Sihan & 三Z-STUDIO & HOYO-MiX',
-            url: '/music/DAMIDAMI.mp3',
-            cover: 'https://wjhhm2003.github.io/img/DAMIDAMI-cover.jpg'
-          }]
+        document.addEventListener('DOMContentLoaded', function() {
+          const ap = new APlayer({
+            container: document.getElementById('aplayer-fixed'),
+            fixed: true,
+            audio: [{
+              name: 'DAMIDAMI',
+              artist: 'Sihan & 三Z-STUDIO & HOYO-MiX',
+              url: '/music/DAMIDAMI.mp3',
+              cover: 'https://wjhhm2003.github.io/img/DAMIDAMI-cover.jpg'
+            }]
+          });
         });
       </script>
 
