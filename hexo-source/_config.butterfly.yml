@@ -1066,7 +1066,7 @@ inject:
             name: 'DAMIDAMI',
             artist: 'Sihan & 三Z-STUDIO & HOYO-MiX',
             url: '/music/DAMIDAMI.mp3',
-            cover: '/img/butterfly-icon.png'
+            cover: 'https://wjhhm2003.github.io/img/butterfly-icon.png'
           }]
         });
       </script>
