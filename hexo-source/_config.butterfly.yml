@@ -93,7 +93,7 @@ footer_img: false
 # Website Background
 # Can set it to color, image URL or an array containing colors and/or image URLs
 # If an array is provided, a random background will be selected from the array on each load
-background:
+background: 'https://wjhhm2003.github.io/img/bg.png'
 
 cover:
   # Disable the cover or not
@@ -1054,6 +1054,77 @@ css_prefix: true
 inject:
   head:
     - <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+    - |
+      <style>
+        /* 亚克力材质效果 (Acrylic Material) */
+        :root {
+          --acrylic-bg-light: rgba(255, 255, 255, 0.6);
+          --acrylic-bg-dark: rgba(20, 20, 20, 0.6);
+          --acrylic-blur: 20px;
+          --acrylic-saturate: 180%;
+          --acrylic-border-light: rgba(255, 255, 255, 0.4);
+          --acrylic-border-dark: rgba(255, 255, 255, 0.1);
+        }
+
+        /* 应用于主要容器 */
+        #page-header.not-top-img,
+        #page-header #nav,
+        #aside-content .card-widget,
+        #recent-posts .recent-post-item,
+        .layout > div:first-child:not(.recent-posts),
+        #footer,
+        #aplayer-fixed {
+          background-color: var(--acrylic-bg-light) !important;
+          backdrop-filter: blur(var(--acrylic-blur)) saturate(var(--acrylic-saturate));
+          -webkit-backdrop-filter: blur(var(--acrylic-blur)) saturate(var(--acrylic-saturate));
+          border: 1px solid var(--acrylic-border-light);
+          box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        /* 暗色模式 */
+        [data-theme="dark"] #page-header.not-top-img,
+        [data-theme="dark"] #page-header #nav,
+        [data-theme="dark"] #aside-content .card-widget,
+        [data-theme="dark"] #recent-posts .recent-post-item,
+        [data-theme="dark"] .layout > div:first-child:not(.recent-posts),
+        [data-theme="dark"] #footer,
+        [data-theme="dark"] #aplayer-fixed {
+          background-color: var(--acrylic-bg-dark) !important;
+          border-color: var(--acrylic-border-dark);
+          box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.4);
+        }
+
+        /* 导航栏特殊处理 - 滚动时 */
+        #page-header.nav-fixed #nav {
+          background: var(--acrylic-bg-light);
+          backdrop-filter: blur(var(--acrylic-blur)) saturate(var(--acrylic-saturate));
+        }
+        [data-theme="dark"] #page-header.nav-fixed #nav {
+          background: var(--acrylic-bg-dark);
+        }
+
+        /* 全局背景设置 */
+        body {
+          background-attachment: fixed !important;
+          background-size: cover !important;
+          background-position: center !important;
+          background-repeat: no-repeat !important;
+        }
+
+        /* 移除原有的白色背景 */
+        #content-inner, #wrap {
+          background: transparent !important;
+        }
+
+        /* 优化文字可读性 */
+        .card-widget, .recent-post-item {
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-widget:hover, .recent-post-item:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+      </style>
   bottom:
     - <div id="aplayer-fixed"></div>
     - <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
