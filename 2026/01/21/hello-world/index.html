@@ -206,16 +206,19 @@
     background: var(--acrylic-bg-dark);
   }
 
-  /* 全局背景设置 */
-  body {
+  /* 全局背景设置 - 强制覆盖 */
+  #web_bg {
+    background-image: url('/img/bg.png') !important;
     background-attachment: fixed !important;
     background-size: cover !important;
     background-position: center !important;
     background-repeat: no-repeat !important;
+    opacity: 1 !important;
+    z-index: -999 !important;
   }
 
   /* 移除原有的白色背景 */
-  #content-inner, #wrap {
+  #content-inner, #wrap, body {
     background: transparent !important;
   }
 
