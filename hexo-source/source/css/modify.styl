@@ -1,0 +1,74 @@
+@import 'nib'
+
+// 顶部图
+#page-header
+  background: transparent !important
+
+  &.post-bg, &.not-home-page
+    height: 280px !important
+  #post-info
+    bottom: 40px !important
+    text-align: center
+  #page-site-info
+    top: 140px !important
+
+  @media screen and (max-width: 768px)
+    &.not-home-page
+      height: 200px !important
+    #post-info
+      bottom: 10px !important
+    #page-site-info
+      top: 100px !important
+
+.top-img
+  height: 250px
+  margin: -50px -40px 50px
+  border-top-left-radius: inherit
+  border-top-right-radius: inherit
+  background-position: center
+  background-size: cover
+  transition: all .3s
+
+  @media screen and (max-width: 768px)
+    height: 230px
+    margin: -36px -14px 36px
+
+  [data-theme='dark'] &
+    filter: brightness(.8)
+
+// 页脚
+#footer:before
+  background-color: alpha(#FFF, .5)
+
+  [data-theme='dark'] &
+    background-color: alpha(#000, .5)
+
+#footer-wrap, #footer-wrap a
+  color: #111
+  transition: unset
+
+  [data-theme='dark'] &
+    color: var(--light-grey)
+
+// 确保内容区域透明，让背景透出来（适配之前的亚克力需求，这里稍微调整一下以匹配"一图流"）
+#content-inner, #wrap
+  background: transparent !important
+
+// 恢复卡片背景（可选，为了让文字看得清，可以保留亚克力效果或设为半透明）
+.card-widget, .recent-post-item, .layout > div:first-child:not(.recent-posts)
+  background: rgba(255, 255, 255, 0.8)
+  backdrop-filter: blur(10px)
+
+[data-theme='dark'] .card-widget, [data-theme='dark'] .recent-post-item, [data-theme='dark'] .layout > div:first-child:not(.recent-posts)
+  background: rgba(30, 30, 30, 0.8)
+  backdrop-filter: blur(10px)
+
+// 强制设置背景
+#web_bg
+  background-image: url('/img/bg.png') !important
+  background-attachment: fixed !important
+  background-size: cover !important
+  background-position: center !important
+  background-repeat: no-repeat !important
+  opacity: 1 !important
+  z-index: -999 !important
