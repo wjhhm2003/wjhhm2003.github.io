@@ -1,5 +1,23 @@
+:root {
+  --acrylic-bg-light: rgba(255,255,255,0.6);
+  --acrylic-bg-dark: rgba(20,20,20,0.6);
+  --acrylic-blur: 20px;
+  --acrylic-saturate: 180%;
+  --acrylic-border-light: rgba(255,255,255,0.4);
+  --acrylic-border-dark: rgba(255,255,255,0.1);
+}
 #page-header {
   background: transparent !important;
+}
+#page-header.nav-fixed #nav {
+  background: var(--acrylic-bg-light);
+  backdrop-filter: blur(var(--acrylic-blur)) saturate(var(--acrylic-saturate));
+  -webkit-backdrop-filter: blur(var(--acrylic-blur)) saturate(var(--acrylic-saturate));
+  border-bottom: 1px solid var(--acrylic-border-light);
+}
+[data-theme='dark'] #page-header.nav-fixed #nav {
+  background: var(--acrylic-bg-dark);
+  border-bottom: 1px solid var(--acrylic-border-dark);
 }
 #page-header.post-bg,
 #page-header.not-home-page {
@@ -45,11 +63,16 @@
 [data-theme='dark'] .top-img {
   filter: brightness(0.8);
 }
+#footer {
+  background: transparent !important;
+}
 #footer:before {
-  background-color: rgba(255,255,255,0.5);
+  background-color: var(--acrylic-bg-light);
+  backdrop-filter: blur(var(--acrylic-blur)) saturate(var(--acrylic-saturate));
+  -webkit-backdrop-filter: blur(var(--acrylic-blur)) saturate(var(--acrylic-saturate));
 }
 [data-theme='dark'] #footer:before {
-  background-color: rgba(0,0,0,0.5);
+  background-color: var(--acrylic-bg-dark);
 }
 #footer-wrap,
 #footer-wrap a {
@@ -68,17 +91,42 @@
 #wrap {
   background: transparent !important;
 }
-.card-widget,
-.recent-post-item,
-.layout > div:first-child:not(.recent-posts) {
-  background: rgba(255,255,255,0.8);
-  backdrop-filter: blur(10px);
+#aside-content .card-widget,
+#recent-posts .recent-post-item,
+.layout > div:first-child:not(.recent-posts),
+#aplayer-fixed {
+  background-color: var(--acrylic-bg-light) !important;
+  backdrop-filter: blur(var(--acrylic-blur)) saturate(var(--acrylic-saturate));
+  -webkit-backdrop-filter: blur(var(--acrylic-blur)) saturate(var(--acrylic-saturate));
+  border: 1px solid var(--acrylic-border-light);
+  -webkit-box-shadow: 0 4px 16px 0 rgba(0,0,0,0.1);
+  box-shadow: 0 4px 16px 0 rgba(0,0,0,0.1);
+  -webkit-transition: -webkit-transform 0.3s ease, box-shadow 0.3s ease;
+  -moz-transition: -moz-transform 0.3s ease, box-shadow 0.3s ease;
+  -o-transition: -o-transform 0.3s ease, box-shadow 0.3s ease;
+  -ms-transition: -ms-transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-[data-theme='dark'] .card-widget,
-[data-theme='dark'] .recent-post-item,
-[data-theme='dark'] .layout > div:first-child:not(.recent-posts) {
-  background: rgba(30,30,30,0.8);
-  backdrop-filter: blur(10px);
+#aside-content .card-widget:hover,
+#recent-posts .recent-post-item:hover,
+.layout > div:first-child:not(.recent-posts):hover,
+#aplayer-fixed:hover {
+  -webkit-transform: translateY(-5px);
+  -moz-transform: translateY(-5px);
+  -o-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
+  transform: translateY(-5px);
+  -webkit-box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+[data-theme='dark'] #aside-content .card-widget,
+[data-theme='dark'] #recent-posts .recent-post-item,
+[data-theme='dark'] .layout > div:first-child:not(.recent-posts),
+[data-theme='dark'] #aplayer-fixed {
+  background-color: var(--acrylic-bg-dark) !important;
+  border-color: var(--acrylic-border-dark);
+  -webkit-box-shadow: 0 4px 16px 0 rgba(0,0,0,0.4);
+  box-shadow: 0 4px 16px 0 rgba(0,0,0,0.4);
 }
 #web_bg {
   background-image: url("/img/bg.png") !important;

@@ -1,8 +1,32 @@
 @import 'nib'
 
-// 顶部图
+// ==========================================
+// 亚克力材质效果变量
+// ==========================================
+:root
+  --acrylic-bg-light: rgba(255, 255, 255, 0.6)
+  --acrylic-bg-dark: rgba(20, 20, 20, 0.6)
+  --acrylic-blur: 20px
+  --acrylic-saturate: 180%
+  --acrylic-border-light: rgba(255, 255, 255, 0.4)
+  --acrylic-border-dark: rgba(255, 255, 255, 0.1)
+
+// ==========================================
+// 顶部图 (一图流适配)
+// ==========================================
 #page-header
   background: transparent !important
+  
+  // 导航栏亚克力效果 (滚动时)
+  &.nav-fixed #nav
+    background: var(--acrylic-bg-light)
+    backdrop-filter: blur(var(--acrylic-blur)) saturate(var(--acrylic-saturate))
+    -webkit-backdrop-filter: blur(var(--acrylic-blur)) saturate(var(--acrylic-saturate))
+    border-bottom: 1px solid var(--acrylic-border-light)
+
+    [data-theme='dark'] &
+      background: var(--acrylic-bg-dark)
+      border-bottom: 1px solid var(--acrylic-border-dark)
 
   &.post-bg, &.not-home-page
     height: 280px !important
@@ -36,12 +60,19 @@
   [data-theme='dark'] &
     filter: brightness(.8)
 
-// 页脚
-#footer:before
-  background-color: alpha(#FFF, .5)
-
-  [data-theme='dark'] &
-    background-color: alpha(#000, .5)
+// ==========================================
+// 页脚 (亚克力效果)
+// ==========================================
+#footer
+  background: transparent !important
+  
+  &:before
+    background-color: var(--acrylic-bg-light)
+    backdrop-filter: blur(var(--acrylic-blur)) saturate(var(--acrylic-saturate))
+    -webkit-backdrop-filter: blur(var(--acrylic-blur)) saturate(var(--acrylic-saturate))
+    
+    [data-theme='dark'] &
+      background-color: var(--acrylic-bg-dark)
 
 #footer-wrap, #footer-wrap a
   color: #111
@@ -50,20 +81,43 @@
   [data-theme='dark'] &
     color: var(--light-grey)
 
-// 确保内容区域透明，让背景透出来（适配之前的亚克力需求，这里稍微调整一下以匹配"一图流"）
+// ==========================================
+// 内容区域透明化
+// ==========================================
 #content-inner, #wrap
   background: transparent !important
 
-// 恢复卡片背景（可选，为了让文字看得清，可以保留亚克力效果或设为半透明）
-.card-widget, .recent-post-item, .layout > div:first-child:not(.recent-posts)
-  background: rgba(255, 255, 255, 0.8)
-  backdrop-filter: blur(10px)
+// ==========================================
+// 卡片亚克力效果 (核心部分)
+// ==========================================
+#aside-content .card-widget,
+#recent-posts .recent-post-item,
+.layout > div:first-child:not(.recent-posts),
+#aplayer-fixed
+  background-color: var(--acrylic-bg-light) !important
+  backdrop-filter: blur(var(--acrylic-blur)) saturate(var(--acrylic-saturate))
+  -webkit-backdrop-filter: blur(var(--acrylic-blur)) saturate(var(--acrylic-saturate))
+  border: 1px solid var(--acrylic-border-light)
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.1)
+  transition: transform 0.3s ease, box-shadow 0.3s ease
 
-[data-theme='dark'] .card-widget, [data-theme='dark'] .recent-post-item, [data-theme='dark'] .layout > div:first-child:not(.recent-posts)
-  background: rgba(30, 30, 30, 0.8)
-  backdrop-filter: blur(10px)
+  &:hover
+    transform: translateY(-5px)
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15)
 
-// 强制设置背景
+// 暗色模式卡片适配
+[data-theme='dark']
+  #aside-content .card-widget,
+  #recent-posts .recent-post-item,
+  .layout > div:first-child:not(.recent-posts),
+  #aplayer-fixed
+    background-color: var(--acrylic-bg-dark) !important
+    border-color: var(--acrylic-border-dark)
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.4)
+
+// ==========================================
+// 强制背景图
+// ==========================================
 #web_bg
   background-image: url('/img/bg.png') !important
   background-attachment: fixed !important
