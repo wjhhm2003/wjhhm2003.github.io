@@ -19,13 +19,13 @@
   
   // 导航栏亚克力效果 (滚动时)
   &.nav-fixed #nav
-    background: var(--acrylic-bg-light)
+    background: var(--acrylic-bg-light) !important
     backdrop-filter: blur(var(--acrylic-blur)) saturate(var(--acrylic-saturate))
     -webkit-backdrop-filter: blur(var(--acrylic-blur)) saturate(var(--acrylic-saturate))
     border-bottom: 1px solid var(--acrylic-border-light)
 
     [data-theme='dark'] &
-      background: var(--acrylic-bg-dark)
+      background: var(--acrylic-bg-dark) !important
       border-bottom: 1px solid var(--acrylic-border-dark)
 
   &.post-bg, &.not-home-page
@@ -67,12 +67,12 @@
   background: transparent !important
   
   &:before
-    background-color: var(--acrylic-bg-light)
+    background-color: var(--acrylic-bg-light) !important
     backdrop-filter: blur(var(--acrylic-blur)) saturate(var(--acrylic-saturate))
     -webkit-backdrop-filter: blur(var(--acrylic-blur)) saturate(var(--acrylic-saturate))
     
     [data-theme='dark'] &
-      background-color: var(--acrylic-bg-dark)
+      background-color: var(--acrylic-bg-dark) !important
 
 #footer-wrap, #footer-wrap a
   color: #111
@@ -88,12 +88,15 @@
   background: transparent !important
 
 // ==========================================
-// 卡片亚克力效果 (核心部分)
+// 卡片亚克力效果 (增强选择器)
 // ==========================================
+// 首页文章卡片、侧边栏卡片、文章详情页、归档页、分类页等
+#recent-posts > .recent-post-items > .recent-post-item,
 #aside-content .card-widget,
-#recent-posts .recent-post-item,
 .layout > div:first-child:not(.recent-posts),
-#aplayer-fixed
+#aplayer-fixed,
+.category-lists .category-list,
+.tag-cloud-list a
   background-color: var(--acrylic-bg-light) !important
   backdrop-filter: blur(var(--acrylic-blur)) saturate(var(--acrylic-saturate))
   -webkit-backdrop-filter: blur(var(--acrylic-blur)) saturate(var(--acrylic-saturate))
@@ -105,12 +108,18 @@
     transform: translateY(-5px)
     box-shadow: 0 8px 24px rgba(0,0,0,0.15)
 
+// 针对首页文章列表项的特殊处理（确保没有子元素覆盖背景）
+#recent-posts > .recent-post-items > .recent-post-item
+  border-radius: 12px
+
 // 暗色模式卡片适配
 [data-theme='dark']
+  #recent-posts > .recent-post-items > .recent-post-item,
   #aside-content .card-widget,
-  #recent-posts .recent-post-item,
   .layout > div:first-child:not(.recent-posts),
-  #aplayer-fixed
+  #aplayer-fixed,
+  .category-lists .category-list,
+  .tag-cloud-list a
     background-color: var(--acrylic-bg-dark) !important
     border-color: var(--acrylic-border-dark)
     box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.4)

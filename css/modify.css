@@ -10,13 +10,13 @@
   background: transparent !important;
 }
 #page-header.nav-fixed #nav {
-  background: var(--acrylic-bg-light);
+  background: var(--acrylic-bg-light) !important;
   backdrop-filter: blur(var(--acrylic-blur)) saturate(var(--acrylic-saturate));
   -webkit-backdrop-filter: blur(var(--acrylic-blur)) saturate(var(--acrylic-saturate));
   border-bottom: 1px solid var(--acrylic-border-light);
 }
 [data-theme='dark'] #page-header.nav-fixed #nav {
-  background: var(--acrylic-bg-dark);
+  background: var(--acrylic-bg-dark) !important;
   border-bottom: 1px solid var(--acrylic-border-dark);
 }
 #page-header.post-bg,
@@ -67,12 +67,12 @@
   background: transparent !important;
 }
 #footer:before {
-  background-color: var(--acrylic-bg-light);
+  background-color: var(--acrylic-bg-light) !important;
   backdrop-filter: blur(var(--acrylic-blur)) saturate(var(--acrylic-saturate));
   -webkit-backdrop-filter: blur(var(--acrylic-blur)) saturate(var(--acrylic-saturate));
 }
 [data-theme='dark'] #footer:before {
-  background-color: var(--acrylic-bg-dark);
+  background-color: var(--acrylic-bg-dark) !important;
 }
 #footer-wrap,
 #footer-wrap a {
@@ -91,10 +91,12 @@
 #wrap {
   background: transparent !important;
 }
+#recent-posts > .recent-post-items > .recent-post-item,
 #aside-content .card-widget,
-#recent-posts .recent-post-item,
 .layout > div:first-child:not(.recent-posts),
-#aplayer-fixed {
+#aplayer-fixed,
+.category-lists .category-list,
+.tag-cloud-list a {
   background-color: var(--acrylic-bg-light) !important;
   backdrop-filter: blur(var(--acrylic-blur)) saturate(var(--acrylic-saturate));
   -webkit-backdrop-filter: blur(var(--acrylic-blur)) saturate(var(--acrylic-saturate));
@@ -107,10 +109,12 @@
   -ms-transition: -ms-transform 0.3s ease, box-shadow 0.3s ease;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+#recent-posts > .recent-post-items > .recent-post-item:hover,
 #aside-content .card-widget:hover,
-#recent-posts .recent-post-item:hover,
 .layout > div:first-child:not(.recent-posts):hover,
-#aplayer-fixed:hover {
+#aplayer-fixed:hover,
+.category-lists .category-list:hover,
+.tag-cloud-list a:hover {
   -webkit-transform: translateY(-5px);
   -moz-transform: translateY(-5px);
   -o-transform: translateY(-5px);
@@ -119,10 +123,15 @@
   -webkit-box-shadow: 0 8px 24px rgba(0,0,0,0.15);
   box-shadow: 0 8px 24px rgba(0,0,0,0.15);
 }
+#recent-posts > .recent-post-items > .recent-post-item {
+  border-radius: 12px;
+}
+[data-theme='dark'] #recent-posts > .recent-post-items > .recent-post-item,
 [data-theme='dark'] #aside-content .card-widget,
-[data-theme='dark'] #recent-posts .recent-post-item,
 [data-theme='dark'] .layout > div:first-child:not(.recent-posts),
-[data-theme='dark'] #aplayer-fixed {
+[data-theme='dark'] #aplayer-fixed,
+[data-theme='dark'] .category-lists .category-list,
+[data-theme='dark'] .tag-cloud-list a {
   background-color: var(--acrylic-bg-dark) !important;
   border-color: var(--acrylic-border-dark);
   -webkit-box-shadow: 0 4px 16px 0 rgba(0,0,0,0.4);
