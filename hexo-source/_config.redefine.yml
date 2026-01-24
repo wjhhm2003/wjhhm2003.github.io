@@ -29,7 +29,7 @@ defaults:
   # Site logo
   logo: /img/butterfly-icon.png
   # Site avatar
-  avatar: /img/butterfly-icon.png
+  avatar: /images/avatar.jpg
 # IMAGE CONFIGURATION <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
 
 
