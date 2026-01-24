@@ -131,8 +131,8 @@ home_banner:
   style: fixed # static or fixed
   # Home banner image
   image: 
-    light: /img/bg.png # light mode
-    dark: /img/bg.png # dark mode
+    light: /images/wallhaven-wqery6-light.webp # light mode
+    dark: /images/wallhaven-wqery6-dark.webp # dark mode
   # Home banner title
   title: Ethan的小站
   # Home banner subtitle
